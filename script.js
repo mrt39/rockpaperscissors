@@ -76,14 +76,23 @@ function playRound(playerSelection, computerSelection) {
     
   }
 
+function game(times) {
+    for (let i = 0; i < times; i++) {
+        //we get the playerchoice and computerchoice for every round
+        var playerSelection = getPlayerChoice();
+        var computerSelection = getComputerChoice(); 
+        playRound(playerSelection, computerSelection);
+     }
+ }
+
+ 
 
 
 
-var playerSelection = getPlayerChoice() 
+//var playerSelection = getPlayerChoice(); 
 
-var computerSelection = getComputerChoice(); 
+//var computerSelection = getComputerChoice(); 
 
-playRound(playerSelection, computerSelection)
+//playRound(playerSelection, computerSelection);
 
-
-
+game(3);

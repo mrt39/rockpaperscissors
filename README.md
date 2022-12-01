@@ -1,2 +1,2 @@
 # rockpaperscissors
-A simple rock paper scissors algorithm for the odin project assignment
+A simple rock paper scissors algorithm for The Odin Project assignment

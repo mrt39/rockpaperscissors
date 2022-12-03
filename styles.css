@@ -1,0 +1,22 @@
+
+  #buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px  
+  }
+  
+  
+  #resultDisplay {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  #winnerDisplay {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  

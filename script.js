@@ -1,8 +1,42 @@
-console.log("Hello World");
 
 
- function getPlayerChoice() {
-    let playerchoice = prompt("Rock, paper or scissors?").toUpperCase();
+
+var playerWinCount = 0
+var computerWinCount = 0
+
+const btnRock = document.querySelector('#rock');
+btnRock.addEventListener('click', () => {
+    console.log("Clicked on rock");
+
+    let computerchoice = getComputerChoice() 
+
+    playRound("ROCK", computerchoice)
+});
+
+
+const btnPaper = document.querySelector('#paper');
+btnPaper.addEventListener('click', () => {
+    console.log("Clicked on paper");
+
+    let computerchoice = getComputerChoice() 
+
+    playRound("PAPER", computerchoice)
+});
+
+
+const btnScissors = document.querySelector('#scissors');
+btnScissors.addEventListener('click', () => {
+    console.log("Clicked on scissors");
+
+    let computerchoice = getComputerChoice() 
+
+    playRound("SCISSORS", computerchoice)
+});
+
+
+
+ function getPlayerChoice(playerchoice) {
+// let playerchoice = prompt("Rock, paper or scissors?").toUpperCase();
 
     if (playerchoice == "ROCK" || playerchoice == "PAPER" || playerchoice == "SCISSORS" ) {
         return playerchoice
@@ -17,7 +51,6 @@ console.log("Hello World");
 
  function getComputerChoice() {
     const randomNumb = Math.floor(Math.random() * 3) + 1
-    console.log(randomNumb)
 
     let computerchoice = ""
 
@@ -78,12 +111,51 @@ function playRound(playerSelection, computerSelection) {
         } 
     } 
 
+    if (winner == "PLAYER"){
+        playerWinCount ++ 
+    } 
+
+    else if (winner == "COMPUTER"){
+        computerWinCount ++ 
+    } 
+
     console.log(result)
-    return winner
+    document.querySelector('#resultDisplay').innerHTML = result
+    console.log(
+        `SCORE:
+        PLAYER: ${playerWinCount} 
+        COMPUTER: ${computerWinCount}
+        `)
+
+
+    var gameWinner = ""
+
+    if (computerWinCount > playerWinCount) {
+        gameWinner = "COMPUTER"
+    }
+
+    else if (computerWinCount < playerWinCount) {
+        gameWinner = "PLAYER"
+    }
+
+
+    if (computerWinCount == 5 || playerWinCount == 5 ) {
+
+        alert(`SCORE:
+        PLAYER: ${playerWinCount} 
+        COMPUTER: ${computerWinCount}
+        ${gameWinner} WINS!
+        `);
+
+        location.reload()
+    }
+    
+
     
   }
 
-function game(times) {
+  /*
+ function game(times) {
 
     var playerWinCount = 0
     var computerWinCount = 0
@@ -134,7 +206,7 @@ function game(times) {
 
  }
 
- 
+  */
 
 
 
@@ -144,4 +216,4 @@ function game(times) {
 
 //playRound(playerSelection, computerSelection);
 
-game(3);
+//game(3);  
